@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><slot name="title">Envoy AI Gateway</slot></title>
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body class="font-sans antialiased bg-white text-black">
+    <header class="p-4 bg-gray-900 text-white">
+      <nav class="container mx-auto flex justify-between">
+        <h1 class="text-xl font-bold">Envoy AI Gateway</h1>
+        <a href="/" class="underline">Home</a>
+      </nav>
+    </header>
+    <main class="min-h-screen">
+      <slot />
+    </main>
+    <footer class="p-4 text-center text-sm text-gray-600">
+      © 2025 Envoy AI Gateway
+    </footer>
+  </body>
+</html>
