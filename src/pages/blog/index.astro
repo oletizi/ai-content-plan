@@ -1,0 +1,20 @@
+
+---
+import { getCollection } from 'astro:content';
+const posts = await getCollection('blog');
+---
+
+<main class="max-w-3xl mx-auto p-8">
+  <h1 class="text-3xl font-bold mb-6">Blog</h1>
+  <ul class="space-y-6">
+    {posts.map(post => (
+      <li key={post.slug} class="border-b pb-4">
+        <a href={`/blog/${post.slug}/`} class="text-xl font-semibold text-blue-600 hover:underline">
+          {post.data.title}
+        </a>
+        <p class="text-sm text-gray-500">{post.data.date}</p>
+        <p class="mt-1 text-gray-700">{post.data.description}</p>
+      </li>
+    ))}
+  </ul>
+</main>
