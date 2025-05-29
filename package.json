@@ -1,6 +1,5 @@
-
 {
-  "name": "envoy-ai-gateway-site",
+  "name": "envoy-ai-gateway-content-plan",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -8,10 +7,10 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^4.0.0",
-    "@astrojs/mdx": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.0",
-    "@astrojs/tailwind": "^4.0.0"
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.8.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0"
