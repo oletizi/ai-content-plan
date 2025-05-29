@@ -1,0 +1,33 @@
+---
+title: "Authenticate OpenAI Traffic in Kubernetes with OIDC and Envoy AI Gateway"
+date: 2025-05-28
+description: "Protect OpenAI access with OIDC-based authentication via Envoy AI Gateway in Kubernetes."
+---
+
+# Authenticate OpenAI Traffic in Kubernetes with OIDC and Envoy AI Gateway
+
+Uncontrolled access to OpenAI can lead to shadow usage, security gaps, and surprise bills. By enforcing OIDC via Envoy AI Gateway, you can ensure that only authenticated and authorized users are able to access LLM endpoints.
+
+## What You'll Learn
+
+- How to configure Envoy AI Gateway with OIDC (e.g., Auth0, Okta, Google)
+- How to intercept OpenAI requests and enforce login
+- How to forward JWT claims for audit and policy control
+
+## Use Case
+You want your internal dev portal to require SSO login before using GPT-based tools. You also want to:
+
+- Apply tenant-based rate limits
+- Track usage per authenticated user
+
+## Sample Policy Snippet
+```yaml
+authentication:
+  - provider:
+      name: oidc-auth
+      issuer: https://auth.myorg.com
+      clientId: envoy-gateway
+      jwksUri: https://auth.myorg.com/.well-known/jwks.json
+```
+
+**Secure model access, maintain audit trails, and support zero trust architecture.**

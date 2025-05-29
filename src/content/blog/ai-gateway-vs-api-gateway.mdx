@@ -1,0 +1,42 @@
+title: "AI Gateway vs API Gateway: What’s the Difference and Why It Matters"
+date: 2025-05-28
+description: "Understand the key differences between traditional API gateways and emerging AI gateways designed for LLMOps."
+---
+
+# AI Gateway vs API Gateway: What’s the Difference and Why It Matters
+
+API gateways have become the default ingress layer for modern applications. But when it comes to AI workloads, they fall short:
+
+| Challenge             | API Gateway | AI Gateway |
+|----------------------|-------------|------------|
+| Token-based limits   | ❌          | ✅         |
+| Prompt observability | ❌          | ✅         |
+| AI-specific policies | ❌          | ✅         |
+| LLM cost control     | ❌          | ✅         |
+| Gateway API native   | ⚠️          | ✅         |
+
+## What Makes an AI Gateway Different?
+
+AI Gateways handle **model-specific traffic patterns**, including:
+
+- Large prompt payloads
+- High token counts
+- Tenant-specific policies
+- OpenAI/HuggingFace request formats
+
+They’re **built for LLMOps**, not just REST and gRPC.
+
+## Why It Matters for Platform Teams
+
+- Prevent runaway usage of OpenAI, Claude, or TGI
+- Secure model access with OIDC, RBAC, and mTLS
+- Track usage down to the prompt or user level
+- Enable internal teams with self-serve, policy-governed access to models
+
+## Conclusion
+
+If you're running LLMs in production, you need a gateway purpose-built for AI traffic.
+**Envoy AI Gateway** is that solution.
+
+🔗 [Learn more about Envoy AI Gateway](#)
+📘 [Read: “What is an AI Gateway?”](#)

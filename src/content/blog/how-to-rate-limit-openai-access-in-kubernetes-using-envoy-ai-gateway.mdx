@@ -1,0 +1,35 @@
+---
+title: "How to Rate Limit OpenAI Access in Kubernetes Using Envoy AI Gateway"
+date: 2025-05-28
+description: "Step-by-step tutorial to apply rate limits to OpenAI's API using Envoy AI Gateway in Kubernetes."
+---
+
+# How to Rate Limit OpenAI Access in Kubernetes Using Envoy AI Gateway
+
+LLMs are powerful—and expensive. Without controls, a single integration can burn through your OpenAI quota in minutes.
+
+**Envoy AI Gateway** helps you:
+
+- Intercept and control requests to OpenAI
+- Apply per-user or per-service quotas
+- Track request and token usage
+
+## What You’ll Learn
+- How to deploy Envoy AI Gateway in your cluster
+- Define Gateway API resources with rate-limiting policies
+- Configure token budgets and enforce per-tenant usage
+- Monitor usage with built-in telemetry
+
+## Example Policy
+```yaml
+rateLimits:
+  - name: openai-limit
+    match:
+      path: /v1/chat/completions
+    requestsPerUnit: 100
+    unit: minute
+```
+
+This allows you to safely expose OpenAI while keeping costs under control.
+
+**[Follow the full tutorial](#)** | **[Join the community](#)** | **[Deploy secure AI inference](#)**

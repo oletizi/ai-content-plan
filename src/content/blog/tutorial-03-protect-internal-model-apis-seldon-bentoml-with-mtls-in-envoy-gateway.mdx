@@ -1,0 +1,30 @@
+---
+
+title: "Protect Internal Model APIs (Seldon, BentoML) with mTLS in Envoy AI Gateway"
+date: 2025-05-28
+description: "Use mTLS in Envoy AI Gateway to secure internal ML model APIs and enforce zero-trust access."
+---
+
+# Protect Internal Model APIs (Seldon, BentoML) with mTLS in Envoy AI Gateway
+
+Serving internal models in Kubernetes—via Seldon, BentoML, or Ray Serve—requires more than just network policies. Use Envoy AI Gateway to:
+
+- Enforce client identity with mTLS
+- Encrypt model traffic end-to-end
+- Prevent unauthorized service access
+
+## What You'll Learn
+
+- How to generate and sign client certificates
+- How to enable mTLS on Gateway routes
+- How to rotate certificates securely
+
+## Sample TLS Policy Snippet
+```yaml
+tls:
+  mode: MUTUAL
+  clientCertificateAuthorities:
+    - secretRef: seldon-ca-secret
+```
+
+**Raise the bar on internal security—without custom firewall rules or external proxies.**

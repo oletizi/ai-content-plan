@@ -1,0 +1,30 @@
+---
+
+title: "Track and Limit LLM Token Usage in LangChain with Envoy AI Gateway"
+date: 2025-05-28
+description: "Use Envoy AI Gateway to enforce token-aware rate limits for LangChain applications."
+---
+
+# Track and Limit LLM Token Usage in LangChain with Envoy AI Gateway
+
+LangChain enables chaining prompts and agents—but that can burn through tokens fast. Use Envoy AI Gateway to:
+
+- Count tokens per request
+- Enforce daily or session-based token quotas
+- Log and block overuse in real-time
+
+## What You'll Learn
+
+- How to inspect prompt size and response tokens
+- How to attach a token budget to a user or agent ID
+- How to build dashboards using Prometheus and Grafana
+
+## Sample Token Budget Policy (Conceptual)
+```yaml
+tokenBudgets:
+  - user: user123
+    maxTokens: 10000
+    period: day
+```
+
+**Ideal for copilots, assistants, and research workloads where token budgets are critical.**

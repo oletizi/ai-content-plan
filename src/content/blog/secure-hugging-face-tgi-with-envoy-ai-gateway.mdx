@@ -1,0 +1,47 @@
+---
+title: "Secure Hugging Face TGI with Envoy AI Gateway: Auth, Rate Limits, and Observability"
+date: 2025-05-28
+description: "Deploy Hugging Face’s TGI behind Envoy AI Gateway to control access, enforce rate limits, and monitor usage in Kubernetes."
+---
+
+# Secure Hugging Face TGI with Envoy AI Gateway: Auth, Rate Limits, and Observability
+
+Deploying a hosted LLM like Hugging Face TGI is only the beginning. To make it usable in production, you need:
+
+- Authentication to restrict who can prompt the model
+- Rate limits to avoid accidental (or intentional) overload
+- Observability to know how it's being used
+
+**Envoy AI Gateway** makes all of that easy—and Kubernetes-native.
+
+## In This Tutorial, You'll Learn
+
+- How to deploy Hugging Face TGI in Kubernetes
+- How to route traffic through Envoy AI Gateway
+- How to apply mTLS or OIDC authentication
+- How to add per-user rate limiting
+- How to collect usage metrics for prompts and responses
+
+### Architecture Diagram
+```
+[ App ] --> [ Envoy AI Gateway ] --> [ Hugging Face TGI ]
+                 |                      |
+           Policies + Auth          Model Output
+```
+
+## Sample Gateway API Policy
+```yaml
+rateLimits:
+  - name: tgi-user-limit
+    match:
+      path: /generate
+    requestsPerUnit: 50
+    unit: minute
+```
+
+## Bonus Features
+
+- ✅ Use Prometheus and Grafana to chart token usage
+- ✅ Extend with Wasm filters to redact prompts or mask PII
+
+**[Deploy the Example](#)** | **[Join the Community](#)**

@@ -1,0 +1,34 @@
+---
+title: "What Is an AI Gateway and Why Do You Need One?"
+date: 2025-05-28
+description: "Understand the purpose of AI Gateways and why modern AI infrastructure needs policy-aware model traffic control."
+---
+
+# What Is an AI Gateway and Why Do You Need One?
+
+You’ve secured your microservices with ingress controllers. You’ve adopted API gateways for external traffic. But what about your AI models?
+
+Traditional gateways weren't built for:
+
+- Prompt payloads that consume tokens and dollars
+- Models that need usage controls across tenants
+- Observability of LLM inputs and outputs
+
+## Enter the AI Gateway
+An **AI Gateway** sits in front of model endpoints—like OpenAI, Claude, or internal Hugging Face models—and provides:
+
+- 🔐 Authentication and authorization (OIDC, mTLS)
+- ⏱️ Rate limiting and token budgets
+- 📊 Prompt observability and usage tracking
+- 📜 Policy enforcement and traffic governance
+
+## Do You Need One?
+You do, if:
+
+- You have multiple teams accessing shared LLMs
+- You’re worried about API abuse, quota blowouts, or compliance
+- You want to scale your AI platform with confidence
+
+**Envoy AI Gateway** was built for this exact use case.
+
+**[Explore use cases](#)** | **[Read the Getting Started guide](#)** | **[Compare AI Gateways](#)**
